@@ -1,41 +1,46 @@
 <html>
-  <body>
-    <table>
-      <thead>
-        <tr>Nome</tr>
-        <tr>Descrição</tr>
-        <tr>Preço</tr>
-        <tr>Quantidade</tr>
-      </thead>
-      <tbody>
-        <% @products.each do |product| %>
-          <tr>
-            <td><%= product.name %></td>
-            <td><%= product.description %></td>
-            <td><%= product.value %></td>
-            <td><%= product.amount %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <h3>Produto com Desconto</h3>
-    <table>
-      <thead>
-        <tr>Nome</tr>
-        <tr>Descrição</tr>
-        <tr>Preço</tr>
-        <tr>Quantidade</tr>
-      </thead>
-      <tbody>
-        <% @discounted_product.each do |product| %>
-          <tr>
-            <td><%= product.name %></td>
-            <td><%= product.description %></td>
-            <td><%= product.value %></td>
-            <td><%= product.amount %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </body>
+  <%= nav_bar brand:"Library", brand_link: root_url %>
+  <div class="container">
+    <body>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>Nome</tr>
+          <tr>Descrição</tr>
+          <tr>Preço</tr>
+          <tr>Quantidade</tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+            <tr>
+              <td><%= product.name %></td>
+              <td><%= product.description %></td>
+              <td><%= product.value %></td>
+              <td><%= product.amount %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Produto com Desconto</h4>
+      </div>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>Nome</tr>
+          <tr>Descrição</tr>
+          <tr>Preço</tr>
+          <tr>Quantidade</tr>
+        </thead>
+        <tbody>
+          <% @discounted_product.each do |product| %>
+            <tr>
+              <td><%= product.name %></td>
+              <td><%= product.description %></td>
+              <td><%= product.value %></td>
+              <td><%= product.amount %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </body>
+  </div>
 </html>
