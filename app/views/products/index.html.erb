@@ -14,7 +14,7 @@
           <td>30</td>
           <td>10</td>
         </tr>
-        <% items = Product.all %>
+        <% items = Product.order :name %>
         <% items.each do |product| %>
           <tr>
             <td><%= product.name %></td>
