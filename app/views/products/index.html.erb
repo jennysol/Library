@@ -1,9 +1,9 @@
 <table class="table table-bordered table-hover">
   <thead>
-    <tr>Nome</tr>
-    <tr>Descrição</tr>
-    <tr>Preço</tr>
-    <tr>Quantidade</tr>
+    <td>Nome</td>
+    <td>Descrição</td>
+    <td>Preço</td>
+    <td>Quantidade</td>
   </thead>
   <tbody>
     <% @products.each do |product| %>
@@ -12,6 +12,7 @@
         <td><%= product.description %></td>
         <td><%= product.value %></td>
         <td><%= product.amount %></td>
+        <td><a href="products/<%= product.id %>/delete">Remover</a></td>
       </tr>
     <% end %>
   </tbody>
@@ -21,10 +22,11 @@
 </div>
 <table class="table table-bordered table-hover">
   <thead>
-    <tr>Nome</tr>
-    <tr>Descrição</tr>
-    <tr>Preço</tr>
-    <tr>Quantidade</tr>
+    <td>Nome</td>
+    <td>Descrição</td>
+    <td>Preço</td>
+    <td>Quantidade</td>
+    <td>Ações</td>
   </thead>
   <tbody>
     <% @discounted_product.each do |product| %>
