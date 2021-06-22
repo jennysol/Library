@@ -1,42 +1,38 @@
-<html>
-  <body>
-    <%= form_for Product.new do |form| %>
-        <div class="row">
-          <div class="col-sm-8">
-            <div class="form-group">
-              <%= form.label :nome%>
-              <%= form.text_field :name, class: "form-control" %>
-            </div>
-          </div>
-        </div>
+<%= form_for Product.new do |form| %>
+<div class="row">
+  <div class="col-sm-8">
+    <div class="form-group">
+      <%= form.label :nome%>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+</div>
 
-        <div class="row">
-          <div class="col-sm-8">
-            <div class="form-group">
-              <%= form.label :descrição%>
-              <%= form.text_field :description, class: "form-control", rows: 4 %>
-            </div>
-          </div>
-        </div>
+<div class="row">
+  <div class="col-sm-8">
+    <div class="form-group">
+      <%= form.label :descrição%>
+      <%= form.text_field :description, class: "form-control", rows: 4 %>
+    </div>
+  </div>
+</div>
 
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="form-group">
-              <%= form.label :preço%>
-              <%= form.number_field :value, class: "form-control", step:"0.01" %>
-            </div>
-          </div>
-        </div>
+<div class="row">
+  <div class="col-sm-2">
+    <div class="form-group">
+      <%= form.label :preço%>
+      <%= form.number_field :value, class: "form-control", step:"0.01" %>
+    </div>
+  </div>
+</div>
 
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="form-group">
-              <%= form.label :quantidade%>
-              <%= form.number_field :amount, class: "form-control" %>
-            </div>
-          </div>
-        </div>
-        <%= form.submit "Criar", class:"btn-primary"%>
-    <% end %>
-  </body>
-</html>
+<div class="row">
+  <div class="col-sm-2">
+    <div class="form-group">
+      <%= form.label :quantidade%>
+      <%= form.number_field :amount, class: "form-control" %>
+    </div>
+  </div>
+</div>
+<%= form.submit "Criar", class:"btn-primary"%>
+<% end %>
