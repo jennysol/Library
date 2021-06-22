@@ -1,12 +1,42 @@
 <html>
   <body>
     <%= form_for Product.new do |form| %>
-        Nome <input type="text" name="product[name]"> <br>
-        Descrição <textarea name="product[description]"></textarea><br>
-        Preço <input type="number" name="product[value]" step="0.01"><br>
-        Quantidade <input type="number" name="product[amount]"><br>
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="form-group">
+              <%= form.label :nome%>
+              <%= form.text_field :name, class: "form-control" %>
+            </div>
+          </div>
+        </div>
 
-        <button type="submit">Criar</button>
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="form-group">
+              <%= form.label :descrição%>
+              <%= form.text_field :description, class: "form-control", rows: 4 %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="form-group">
+              <%= form.label :preço%>
+              <%= form.number_field :value, class: "form-control", step:"0.01" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="form-group">
+              <%= form.label :quantidade%>
+              <%= form.number_field :amount, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <%= form.submit "Criar", class:"btn-primary"%>
     <% end %>
   </body>
 </html>
