@@ -13,7 +13,9 @@
         <td><%= product.description %></td>
         <td><%= product.value %></td>
         <td><%= product.amount %></td>
-        <td><%= button_to "Remover", product, method: :delete, class:"btn btn-danger" %></td>
+        <td><%= button_to "Remover", product, method: :delete, 
+          class:"btn btn-danger", 
+          data: {confirm: "Certeza que deseja excluir o produto #{product.name} ? "} %></td>
       </tr>
     <% end %>
   </tbody>
