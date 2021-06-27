@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  delete "products/:id", to: "products#destroy", as: :product
-  post "products", to: "products#create"
-  get "products/new", to: "products#new"
+  resources :products, only: [:new, :create, :destroy]
   root to: "products#index"
 end
