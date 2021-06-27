@@ -12,7 +12,7 @@
         <td><%= product.description %></td>
         <td><%= product.value %></td>
         <td><%= product.amount %></td>
-        <td><a href="products/<%= product.id %>/delete">Remover</a></td>
+        <td><%= link_to "Remover", product, method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
