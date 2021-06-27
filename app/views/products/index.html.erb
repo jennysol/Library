@@ -4,6 +4,7 @@
     <td>Descrição</td>
     <td>Preço</td>
     <td>Quantidade</td>
+    <td>Ações</td>
   </thead>
   <tbody>
     <% @products.each do |product| %>
@@ -12,7 +13,7 @@
         <td><%= product.description %></td>
         <td><%= product.value %></td>
         <td><%= product.amount %></td>
-        <td><%= link_to "Remover", product, method: :delete %></td>
+        <td><%= button_to "Remover", product, method: :delete, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,7 +27,6 @@
     <td>Descrição</td>
     <td>Preço</td>
     <td>Quantidade</td>
-    <td>Ações</td>
   </thead>
   <tbody>
     <% @discounted_product.each do |product| %>
