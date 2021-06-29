@@ -4,10 +4,19 @@ class ProductsController < ApplicationController
         @discounted_product = Product.order(:preco).limit 1
     end
 
+    def new
+        @product = Product.new
+    end
+
     def create
-       product =  params.require(:product).permit(:name, :description, :value, :amount)
-       Product.create product
-       redirect_to root_url
+       values = params.require(:product).permit(:name, :description, :value, :amount)
+       @product = Product.new values
+       if @product.save
+           flash[:notice] = "Produto salvo com sucesso!"
+           redirect_to root_url
+       else 
+           render :new
+       end
     end
 
     def destroy
@@ -17,7 +26,7 @@ class ProductsController < ApplicationController
     end
 
     def search
-        name = params[:name]
-        @products = Product.where "name like ?", #{name}
+        @name = params[:name]
+        @products = Product.where "name like ?", "%#{@name}"
     end
 end
